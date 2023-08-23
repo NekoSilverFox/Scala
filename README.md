@@ -131,7 +131,7 @@ println("hello,world!")
 新建文件`HelloScala.scala`。
 
 ```scala
-object HelloScala { // HelloScala is a object, not a class, will create a 
+object HelloScala { // HelloScala is a object, 全局只有一份，相当于 Java 中的静态对象
     def main(args : Array[String]) : Unit = {
         println("hello,world!");
     }
@@ -180,6 +180,8 @@ java -cp %SCALA_HOME%/lib/scala-library.jar; HelloScala
 ### IDEA环境配置
 
 > **基于macOS的Scala环境搭建+IDEA：**https://zhuanlan.zhihu.com/p/344521073
+>
+> 文中使用的方式：https://www.bilibili.com/video/BV1Xh411S7bP/?p=8&spm_id_from=pageDriver&vd_source=d8e4362c5a7a2a744149dae0bd9c79aa
 
 使用 IntelliJ IDEA：
 
@@ -190,7 +192,11 @@ java -cp %SCALA_HOME%/lib/scala-library.jar; HelloScala
 - 需要能够添加scala源文件，右键项目，添加框架支持，配置Scala SDK，选择，然后就可以右键添加Scala源文件了。
 - 添加包，添加Scala类，选择对象，编辑源码。
 
-```
+
+
+> 在 IDEA 中 写一个 `main` 便可以自动补全
+
+```scala
 package VeryStarted
 
 object HelloWorld {
@@ -202,11 +208,11 @@ object HelloWorld {
 
 
 
-- Ctrl + Shift + F10运行。
+- Ctrl + Shift + F10 运行。
 - 可以看到执行的命令是`java`在`classpath`中引入了Scala的`jar`包形式的库。
 - 调用java的类库：
 
-```
+```scala
 package VeryStarted
 
 object HelloWorld {
@@ -221,7 +227,7 @@ object HelloWorld {
 
 语法含义：
 
-```
+```scala
 object SingletonObject { body }
 def MethodName(ArgName: ArgType): RetType = { body }
 ```
